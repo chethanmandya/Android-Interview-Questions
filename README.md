@@ -3,7 +3,7 @@
 
 ## What are the main 3 Object Oriented Programing (OOP) concepts?
 
-Inheritance 
+### Inheritance 
 
 Java inheritance can be defined as the process where one class acquires property (Field and methods) of another. With the use of inheritance the information made manageable in hierarchical order. 
 Inheritance is nothing but mechanism which allow you to reuse code. 
@@ -14,7 +14,7 @@ Single inheritance , Multi level inheritance, hierarchical inheritance , Multipl
 What is the reasons that java doesn’t support for multiple inheritance ?
 Because of diamond problem, derivate has two base class and these two base class connects to common base class. Why didn’t java resolve this ? to simplify compiler 
  
-Polymorphism
+### Polymorphism
 
 It is concept which allows to perform single task in many different ways . 
 Polymorphism can be defined as object showing different behaviors at different stages of its life cycle Or performing single action in different ways. 
@@ -28,23 +28,23 @@ in object oriented terms- overriding means to override the functionality of exis
 its ability to define a behavior that's specific to the subclass type, which means a subclass implement a parent class method based on its requirements. Override means we are overriding method to rewrite method. 
   
 
-Abstraction - abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In other words, the user will have the information on what the object does instead of how it does it.
+### Abstraction 
+Abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In other words, the user will have the information on what the object does instead of how it does it.
 In Java, abstraction is achieved using Abstract classes and interfaces.
 
 
-Encapsulation 
-
+### Encapsulation 
 Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
 To achieve encapsulation in Java −
-	•	Declare the variables of a class as private. 
-	•	Provide public setter and getter methods to modify and view the variables values. 
+	• Declare the variables of a class as private. 
+	• Provide public setter and getter methods to modify and view the variables values. 
 
 
 ## Explain object serialization and how to implement it in Java. 
 
-Serialization is the process of converting an object into a sequence of bytes which can be persisted to a disk Or database Or Can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. 
-Java objects are serializable if its class or any of its classes implements java.io.serializable Or subinterface java.io.Externalizable interface. 
-ObjectInputStream and ObjectOutputStream 
+	Serialization is the process of converting an object into a sequence of bytes which can be persisted to a disk Or database Or Can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. 
+	Java objects are serializable if its class or any of its classes implements java.io.serializable Or subinterface java.io.Externalizable interface. 
+	ObjectInputStream and ObjectOutputStream 
 
 ## What is Serializable?
 
