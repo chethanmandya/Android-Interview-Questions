@@ -1370,7 +1370,7 @@ The important thing about series (1/1 + 1/2 + 1/3 + … + 1/n) is equal to O(Log
 
 
 http://discrete.gr/complexity/
-https://developer.android.com/topic/libraries/architecture/navigation/navigation-implementing
+
 
 
 
