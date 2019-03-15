@@ -14,7 +14,7 @@ Single inheritance , Multi level inheritance, hierarchical inheritance , Multipl
 What is the reasons that java doesn’t support for multiple inheritance ?
 Because of diamond problem, derivate has two base class and these two base class connects to common base class. Why didn’t java resolve this ? to simplify compiler 
  
-### Polymorphism
+#### Polymorphism
 
 It is concept which allows to perform single task in many different ways . 
 Polymorphism can be defined as object showing different behaviors at different stages of its life cycle Or performing single action in different ways. 
@@ -28,25 +28,25 @@ in object oriented terms- overriding means to override the functionality of exis
 its ability to define a behavior that's specific to the subclass type, which means a subclass implement a parent class method based on its requirements. Override means we are overriding method to rewrite method. 
   
 
-### Abstraction 
+#### Abstraction 
 Abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In other words, the user will have the information on what the object does instead of how it does it.
 In Java, abstraction is achieved using Abstract classes and interfaces.
 
 
-### Encapsulation 
+#### Encapsulation 
 Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods) together as a single unit. In encapsulation, the variables of a class will be hidden from other classes, and can be accessed only through the methods of their current class. Therefore, it is also known as data hiding.
 To achieve encapsulation in Java −
 	• Declare the variables of a class as private. 
 	• Provide public setter and getter methods to modify and view the variables values. 
 
 
-## Explain object serialization and how to implement it in Java. 
+### Explain object serialization and how to implement it in Java. 
 
 Serialization is the process of converting an object into a sequence of bytes which can be persisted to a disk Or database Or Can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. 
 Java objects are serializable if its class or any of its classes implements java.io.serializable Or subinterface java.io.Externalizable interface. 
 Examples are ObjectInputStream and ObjectOutputStream 
 
-## What is Serializable?
+### What is Serializable?
 
 Serializable is a standard Java interface. It is not a part of the Android SDK. Its simplicity is its beauty. Just by implementing this interface your POJO will be ready to jump from one Activity to another.
 
@@ -54,11 +54,11 @@ The beauty of serializable is that you only need to implement the Serializable i
 
 The problem with this approach is that reflection is used and it is a slow process. This mechanism also tends to create a lot of temporary objects and cause quite a bit of garbage collection.
 
-## What is Parcelable?
+### What is Parcelable?
 
 Parcelable is another interface. Despite its rival (Serializable in case you forgot), it is a part of the Android SDK. Now, Parcelable was specifically designed in such a way that there is no reflection when using it. That is because we are being really explicit for the serialization process.
 
-## Explain anonymous classes.
+### Explain anonymous classes.
 Defining class with no identity, that there is no class names are present. Anonymous inner class are mostly used to provide definition for interfaces.
 
 Consider there is an interface
@@ -86,7 +86,7 @@ Why do you need this ?
 	We are implementing interface , nothing but defining interface inside method. Anonymous inner class always should be always written inside method. 
 
 
-## Describe the differences between abstract classes and interfaces.
+### Describe the differences between abstract classes and interfaces.
 
 1. abstract class : 0 or N number of concrete method OR 0 or N number of abstract method
 Interface : 0 or N number of abstract method only 
@@ -122,7 +122,7 @@ Why can’t we make class as private and protect ?
 What is the use of making class as private, there is no communication to outside world , what is protected member -> within the hierarchy is available , protected members can be only accessed within the family member. 
 Making protect to class is nothing but you are communicating within your family and you are not interacting with any outside class member , is that possible ???  
 
-## Explain what a Singleton class is and how to create one in Java 
+### Explain what a Singleton class is and how to create one in Java 
 
 The Singleton design pattern addresses all of these concerns. With the Singleton design pattern you can:
 
@@ -141,17 +141,17 @@ Ensure that only one instance of a class is created Provide a global point of ac
            }
         }
 
-## Why should the equals() and hashCode() methods often be overridden together?
+### Why should the equals() and hashCode() methods often be overridden together?
 
-## What is boxing in java ? 
-        Converting primitive data into object data is known as Boxing. 
+### What is boxing in java ? 
+Converting primitive data into object data is known as Boxing. 
         byte(primitive type) -🡪 Byte (Object type)
         byte x = 100;
         Byte.valueOf( x //primitive type);
 
-## How do you properly override the equals() method? For example, what considerations should be taken when checking for equality? 
+### How do you properly override the equals() method? For example, what considerations should be taken when checking for equality? 
 
-## Difference between final, finally and finalize?
+### Difference between final, finally and finalize?
 Final is used to apply restrictions on class, method and variable. Final class can't be inherited, final method can't be overridden and final variable value can't be changed.	
 Final is a keyword.	
 
@@ -164,17 +164,17 @@ Finalize is a method.
 In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?[info]
 That's actually true in any language...finally will always execute before a return statement, no matter where that return is in the method body. If that wasn't the case, the finally block wouldn't have much meaning.
 
-## Explain method overloading & overriding ?
+### Explain method overloading & overriding ?
 Method overloading is nothing but a feature that allows class to declare two or more method with same name but different parameters. Example - addition of two methods 
 
 Method overriding - in object oriented terms- overriding means to override the functionality of existing method. 
 its ability to define a behavior that's specific to the subclass type, which means a subclass implement a parent class method based on its requirements.   
 
-## What is memory leak and how does Java handle it? 
+### What is memory leak and how does Java handle it? 
 
 # Data Structures Questions 
 
-## What the the primitive types in Java ?
+### What the the primitive types in Java ?
 There are 8 primitive types:
 byte
 short
@@ -185,7 +185,7 @@ float
 double
 Boolean
 
-## What data structures do we have available to us, as programmers?
+### What data structures do we have available to us, as programmers?
 
 Java has two categories of data:
 Primitive data (e.g., number, character)
@@ -201,7 +201,7 @@ the big-O performance of those operations (e.g. logarithmic, exponential)
 how you traverse them to visit all their elements, and what order they're visited in
 at least one typical implementation for the data structure.
 
-## Why do we need collections ? 
+### Why do we need collections ? 
 
 Before Collection Framework (or before JDK 1.2) was introduced, the standard methods for grouping Java objects (or collections) were Arrays or Vectors or Hashtables. All of these collections had no common interface.
 
@@ -254,7 +254,7 @@ have only keys, whereas in Map, we have key, value pairs.
 
 
 
-## What are the use cases and differences of arrays and ArrayLists?
+### What are the use cases and differences of arrays and ArrayLists?
 
 1. Resizable : Array is static in size that is fixed length data structure, One can not change the length after creating the Array object.
 
@@ -316,10 +316,11 @@ example of multidimensional array:
 Integer addarrayobject[][] = new Integer[3][2];
 addarrayobject[0][0]= new Integer(8)  
 
+### What is mutable and immutable string ?
+### What is the difference between String and String Builder ? 
+### What are the use cases and differences of a HashSet and a TreeSet? [info]
 
-## What are the use cases and differences of a HashSet and a TreeSet? [info]
-
-## Difference between HashSet and TreeSet 
+### Difference between HashSet and TreeSet 
 
 1. Ordering : HashSet stores the object in random order . There is no guarantee that the element we  inserted first in the HashSet  will be printed first in the output . For example   
 
@@ -391,7 +392,7 @@ Parameters:
 comparator - the comparator that will be used to order this set. If null, the natural ordering of the elements will be used.
 
 
-## Similarities Between HashSet and TreeSet
+### Similarities Between HashSet and TreeSet
 
 1. Unique Elements :   Since HashSet and TreeSet both implements Set interface . Both are allowed to store only unique elements in their objects. Thus there can never be any duplicate elements inside the HashSet and TreeSet objects.
 
@@ -402,7 +403,7 @@ comparator - the comparator that will be used to order this set. If null, the na
 4. Fail-fast Iterators :  The iterators returned by this class's  method are fail-fast: if the set is modified at any time after the iterator is  created, in any way except through the iterator's own  remove method, the iterator will throw a  ConcurrentModificationException.  Thus, in the face of concurrent modification, the iterator fails quickly and cleanly, rather than risking arbitrary, non-deterministic behavior at   an undetermined time in the future.
 
 
-## When to prefer TreeSet over HashSet
+### When to prefer TreeSet over HashSet
 
 1.  Sorted unique elements are required instead of unique elements.The sorted list given by TreeSet is always in ascending order.
 
@@ -499,12 +500,12 @@ Threads can be created by using two mechanisms :
 
 
 
-## Thread Class vs Runnable Interface
+### Thread Class vs Runnable Interface
 
 If we extend the Thread class, our class cannot extend any other class because Java doesn’t support multiple inheritance. But, if we implement the Runnable interface, our class can still extend other base classes.
 We can achieve basic functionality of a thread by extending Thread class because it provides some inbuilt methods like yield(), interrupt() etc. that are not available in Runnable interface
 
-## ThreadPool in Java?
+### ThreadPool in Java?
 
 A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread cycle overhead and resource thrashing. Since the thread is already existing when the request arrives, the delay introduced by thread creation is eliminated, making the application more responsive.
 
@@ -600,7 +601,7 @@ newSingleThreadExecutor()         Creates a single thread.
 		} 
 	} 
 
-## Risks in using Thread Pools
+### Risks in using Thread Pools
 
 1. Deadlock : While deadlock can occur in any multi-threaded program, thread pools introduce another case of deadlock, one in which all the executing threads are waiting for the results from the blocked threads waiting in the queue due to the unavailability of threads for execution.
 
@@ -617,7 +618,7 @@ The Thread Pool has to be ended explicitly at the end. If this is not done, then
 
 One needs to understand the tasks to effectively tune the thread pool. If the tasks are very contrasting then it makes sense to use different thread pools for different types of tasks so as to tune them properly.
 
-## What is Handler / Message Queue : 
+### What is Handler / Message Queue : 
 
 Message queue  : Android maintains message queue which is always populated with tasks that needs to update the UI , Task could be as simple as rendering button, doing something on click of button,
 
@@ -629,7 +630,7 @@ UI Looper thread : So in our case, since we want to update UI , the UI thread it
 Handler  : We have thread and thread wants to put a task in this particular message queue, it is not possible to put that directly, thread cannot directly put a task into message queue, for that we use something called a handler. Thread gives task that it wants to put into queue to the handler. And Handler will be having reference to message queue. And it will place that particular task in the message queue.
 
 
-## What if we want to create our own custom looper ? 
+### What if we want to create our own custom looper ? 
 We will create own thread that behave like looper , looper thread will be able host tasks that it wants to execute.  
 From the UI thread , we will launch new thread , this new thread basically uses handler and then put the task to custom looper thread we have created 
 
@@ -688,18 +689,18 @@ How to stop the looper ??
 looperThread.handler.getLooper().quit();
 customerHandlerThread.getLooper().quit();
 
-## Explain event-driven programming in Java [info]
-## How can you typecast in Java? [info]
-## Explain Java's try-catch-finally paradigm [info]
+### Explain event-driven programming in Java [info]
+### How can you typecast in Java? [info]
+### Explain Java's try-catch-finally paradigm [info]
 
-## Build Tools
+### Build Tools
 
-## Have you used any Ant, Maven, Gradle features for your project?
+### Have you used any Ant, Maven, Gradle features for your project?
 
 
-## Core Android
-## How does the Android notification system work?
-## How can two distinct Android apps interact? (several answers)
+### Core Android
+### How does the Android notification system work?
+### How can two distinct Android apps interact? (several answers)
 
 At the simplest level there are two different ways for apps to interact on Android: via Intents, passing data from one application to another; and through Services, where one application provides functionality for others to use. There are different ways to utilize both methods, depending on what you want to accomplish and what technical challenges you face. This is a brief overview that wil l avoid delving into the technical aspects.
 
@@ -712,12 +713,12 @@ One feature of a Service is to perform an action in the background as mentioned 
 Describe Activities.
 An activity represents a single screen with a user interface,in-short Activity performs actions on the screen. For example, an email application might have one activity that shows a list of new emails, another activity to compose an email, and another activity for reading emails. If an application has more than one activity, then one of them should be marked as the activity that is presented when the application is launched.
 
-## What are the four states of the Activity Lifecycle? 
+### What are the four states of the Activity Lifecycle? 
 [active/running, paused, stopped, destroyed]
 
-## What are the seven callback methods of an Activity used to perform operations when the Activity transitions between states? [onCreate(), onStart(), onResume(), onPause(), onStop(), onRestart(), onDestroy()]
+### What are the seven callback methods of an Activity used to perform operations when the Activity transitions between states? [onCreate(), onStart(), onResume(), onPause(), onStop(), onRestart(), onDestroy()]
 
-## What is the difference between a fragment and an activity? Explain the relationship between the two. 
+### What is the difference between a fragment and an activity? Explain the relationship between the two. 
 
 Activity : 
 Activities are one of the fundamental building blocks of apps on the Android platform. They serve as the entry point for a user's interaction with an app. When one app invokes another, the calling app invokes an activity in the other app, rather than the app as an atomic whole. In this way, the activity serves as the entry point for an app's interaction with the user.
@@ -728,21 +729,21 @@ To use activities in your app, you must register information about them in the a
 Typically, one activity in an app is specified as the main activity, which is the first screen to appear when the user launches the app.
 Over the course of its lifetime, an activity goes through a number of states.
 
-## What is a Fragment?
+### What is a Fragment?
 
 A Fragment represents a behavior or a portion of user interface in an Activity. You can combine multiple fragments in a single activity to build a multi-pane UI and reuse a fragment in multiple activities. You can think of a fragment as a modular section of an activity, which has its own lifecycle, receives its own input events, and which you can add or remove while the activity is running.
 
 Lifecycle methods are hosted by are hosted by hosting activity.
 Lifecycle of a fragment
 
-## When to use fragment and when to use activity ? 
+### When to use fragment and when to use activity ? 
 Fragments are encapsulated parts of an activity , when you build up your application, when your activity starts getting too big, you need to start breaking up into fragment effectively. 
 
-## When to use fragment and views ?
+### When to use fragment and views ?
 Views are the nuts and bolts of your UI , Activities and fragments are life cycle constructs that basically provides plugin points of contact with rest of the system that tells you what’s going on. 
 
 
-## Activity life cycle
+### Activity life cycle
 
 
 public class Activity extends ApplicationContext {
@@ -775,7 +776,7 @@ protected void onStop();
  }
 . 
 
-## What is the difference between Serializable and Parcelable? Which is the best approach in Android? 
+### What is the difference between Serializable and Parcelable? Which is the best approach in Android? 
 
 When starting on Android, we all learn that we cannot just pass object references to activities and fragments, we have to put those in an Intent / Bundle.
 
@@ -806,7 +807,7 @@ According to google engineers, this code will run significantly faster. One of t
 
 However, it is obvious here that implementing Parcelable is not free. There is a significant amount of boilerplate code and it makes the classes harder to read and maintain.
 
-## What are "launch modes"? [info]
+### What are "launch modes"? [info]
 There are four launch modes for activity. They are:
 
 1. standard
@@ -916,12 +917,12 @@ Task1 — A -> B -> C
 Task2 — D (Here old instance gets called and intent data route through onNewIntent() callback)
 
 
-## What are Intents? [info]
+### What are Intents?
 
 Intents are asynchronous messages which allow application components to request functionality from other Android components. Intents allow you to interact with components from the same applications as well as with components contributed by other applications. For example, an activity can start an external activity for taking a picture.
 
 
-## What is an Implicit Intent? What is an Explicit Intent? 
+### What is an Implicit Intent? What is an Explicit Intent? 
 
 There are two types of intents:
 
@@ -945,7 +946,7 @@ To start an activity: You can start a new instance of an Activity by passing an 
 
 3. To deliver a broadcast: You can deliver a broadcast to other apps by passing an Intent to sendBroadcast(),           sendOrderedBroadcast(), or sendStickyBroadcast()
 
-## What is a Service?
+### What is a Service?
 
 Key points :
 Service is one of the four major component in android. other being content provider, Activity, Broadcast receiver.
@@ -957,14 +958,14 @@ Service doesn’t accommodate it’s own thread, it doesn’t span with new thre
 Service you created needs to be mention in android manifest 
 
 
-## Should you use a service or a thread?
+### Should you use a service or a thread?
 
 A service is simply a component that can run in the background, even when the user is not interacting with your application, so you should create a service only if that is what you need.
 
 You can still consider AsyncTask and HandlerThread for doing the same as service but AsyncTash or HandlerThread are closely coupled with activity. life time of these threads is on activity life cycle / Application context. if you want to run some operations even when application process is not live OR application activity is not live then service is needed. 
 
 
-## Types of services:
+### Types of services:
 Foreground :
 A foreground service performs some operation that is noticeable to the user. typical example is , an audio app would use a foreground service to play an audio track. Foreground services must display a Notification. Foreground services continue running even when the user isn't interacting with the app.
 
@@ -977,7 +978,7 @@ There might be situation where you want to check result of services , where you 
 A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC)
 
 
-## Implementation of service : 
+### Implementation of service : 
 
 Class which extend services becomes service class. on extending service, there are certain methods to be override in the class
 
@@ -990,7 +991,7 @@ OnDestroy() - to clean up any resources such as threads, registered listeners, o
 OnStartCommand () - The system invokes this method by calling startService(), to stop service we say that stopSelf() or stopServices().
 
 
-## Android system force-stops a service : 
+### Android system force-stops a service : 
 
 Let’s assume I have app which is some thing called grocery list , and I have open another app on top of grocery app, and again another app and so on. as I keep on starting multiple apps there may arise a situation where in resource crunch situation will happen and android may actually decide to kill your app which is not running in the foreground. In case I had a service that was running in my app which is running in background then android will not try to kill that particular application because services is always gets a high priority. But that doesn’t mean that just because you keep service and it will not killed, if the resource crunch actually do happen and resource crunch is very severe then android operating system may actually decides to even kill the app.
 
@@ -1009,7 +1010,7 @@ You can ensure that your service is available to only your app by including the 
 Users can see what services are running on their device. If they see a service that they don't recognize or trust, they can stop the service. In order to avoid having your service stopped accidentally by users, you need to add the android:description attribute to the <service> element in your app manifest. In the description, provide a short sentence explaining what the service does and what benefits it provides.
 
 
-## Intent Service
+### Intent Service
 
 It is subclass of service The IntentService class does the following:
 
@@ -1052,7 +1053,7 @@ Loaders ensure that all cursor operations are done asynchronously, thus eliminat
 Advantages of having loaders is that, when there is a change in other applications, it automatically load new content in other application when resuming activity . 
 
 
-## Broad Cast Receiver : 
+### Broad Cast Receiver : 
 Usually in android operating system you will encounter lot of different type of events that are occurring, events would be battery low, incoming call, incoming SMS, Wifi-Availability, Bluetooth device connected, Charger disconnected . 
 Probably you will encounter the scenario where in you want to respond to any of these events that is happening in system. 
 For example , if in case of battery scenario, you may want to stop your application to stop pulling backend data pulling mechanism, because that is unnecessary drain the battery. 
@@ -1113,9 +1114,9 @@ Use LocalbroadcastManager.
 
 
 
-## Android O limitation on services : 
+### Android O limitation on services : 
 
-## what happens when you do start services when your not there in forground services? 
+### what happens when you do start services when your not there in forground services? 
 
 you will get illagal state exception. basically is not the way to start background services anymore. this kind of big deal in android oreo . there are some very practical ways in which this is softened up. one of that is grace period . services continue to run on for a while once you lose your foreground status  
 
@@ -1128,7 +1129,7 @@ The idea behind these changes is fundamentally that, if expansive or potential e
 Before Android 8.0, Android apps would start a service that ran almost indefinitely, even when the app was in the background. This service can be handy for the app, and easy for the developer to implement, but may also have an impact on device experience.
 Imagine a scenario where many applications want to perform work when a device is plugged in to charge. When this happens, Android dispatches the android.intent.action.ACTION_POWER_CONNECTED intent. All apps registered to respond to that intent will start up, demanding RAM, CPU time, and bandwidth. Consequentially, it is possible these simultaneous demands may exceed the available space on the device and cause it to slow down. At this point, all a user knows is that they plugged in their device and it started exhibiting sluggish, unresponsive behavior and may assume something is wrong with their phone or memory.
 
-## Android and the JobScheduler
+### Android and the JobScheduler
 
 Android 8.0 has introduced new background execution limits that dramatically change how services work. When applications move into the background, any services they start will be granted several minutes to complete their work before the operating system terminates them. The Android Framework JobScheduler is one possible way to address this change for Xamarin.Android apps targeting Android 5.0 (API level 21) or higher.
 
@@ -1204,17 +1205,17 @@ Now that you’ve seen the basics of the JobScheduler API, try using it in your 
 
 
 
-## What is ADB?
+### What is ADB?
 Android Debug Bridge (adb) is a versatile command-line tool that lets you communicate with a device. The adb command facilitates a variety of device actions, such as installing and debugging apps, and it provides access to a Unix shell that you can use to run a variety of commands on a device
 
-## What is ANR?
+### What is ANR?
 What is AndroidManifest.xml used for? Give examples of what kind of data you would add to it. [info]
 Describe how broadcasts and intents work to be able to pass messages around your app.[info]
 What is the Dalvik Virtual Machine?
 What are different ways to store data in your Android app? [info]
 different data storage options available on Android:
 
-## Internal file storage: Store app-private files on the device file system.
+### Internal file storage: Store app-private files on the device file system.
 External file storage: Store files on the shared external file system. This is usually for shared user files, such as photos.
 Shared preferences: Store private primitive data in key-value pairs.
 Databases: Store structured data in a private database
@@ -1230,12 +1231,9 @@ There’s also the potential for this to result in a memory leak since the Async
 For these reasons, using AsyncTasks for long-running background tasks is generally a bad idea . Rather, for long-running background tasks, a different mechanism (such as a service) should be employed.
 
 
-## What is the difference between Service and IntentService? How is each used? 
-## What is a Sticky Intent?
-## What is AIDL?
-## What is dependency injection?
-## What are the different protection levels in permission?
-## How would you preserve Activity state during a screen rotation?
+### What is dependency injection?
+### What are the different protection levels in permission?
+### How would you preserve Activity state during a screen rotation?
 
 You need to override onSaveInstanceState(Bundle savedInstanceState) and write the application state values you want to change to the Bundle parameter like this:
 
@@ -1267,40 +1265,38 @@ The Bundle is essentially a way of storing a NVP ("Name-Value Pair") map, and it
 	
 You would usually use this technique to store instance values for your application (selections, unsaved text, etc.).
 
-## What is View Group in Android?
-## What is the difference between view and fragment ? 
-## What is mutable and immutable string ?
-## What is the difference between String and String Builder ? 
+### What is View Group in Android?
+### What is the difference between view and fragment ? 
+
 
 
 A ViewGroup is a special view that can contain other views (called children.) The view group is the base class for layouts and views containers. This class also defines the ViewGroup.LayoutParams class which serves as the base class for layouts parameters.
 
 View class represents the basic building block for user interface components. A View occupies a rectangular area on the screen and is responsible for drawing and event handling. View is the base class for widgets, which are used to create interactive UI components (buttons, text fields, etc.).
 
-## Android Design and XML
-## Explain the differences and similarities of Relative Layout and Linear Layout.
-## Explain the differences and similarities of List Views and Grid Views.
-## Describe how to implement XML namespaces.
-## Explain how to present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML (no Java) [info]
+### Android Design and XML
+### Explain the differences and similarities of Relative Layout and Linear Layout.
+### Explain the differences and similarities of List Views and Grid Views.
+### Describe how to implement XML namespaces.
+### Explain how to present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML (no Java) [info]
 for layout_width and layout_height, what's the difference between match_parent and wrap_content?
-## How do you implement Google's new Material Design in an Android application? [info]
-## Difference between View.GONE and View.INVISIBLE? [info]
+### How do you implement Google's new Material Design in an Android application? [info]
+### Difference between View.GONE and View.INVISIBLE? [info]
 
 Android Networking
-## Have you use an HTTP Library, which, why, did you like it?
-## Describe how REST APIs work.
-## What are some typical methods of HTTP request/responses? [GET, POST, PUT, PATCH, DELETE, UPDATE]
+### Have you use an HTTP Library, which, why, did you like it?
+### Describe how REST APIs work.
+### What are some typical methods of HTTP request/responses? [GET, POST, PUT, PATCH, DELETE, UPDATE]
 Databases
-## Why does Android use SQLite?
-## What libraries have you used for interacting with databases and why did you choose them?
-## What are contract classes? [info]
-## How do you use the BaseColumns interface to describe your data schema? [info]
+### Why does Android use SQLite?
+### What libraries have you used for interacting with databases and why did you choose them?
+### What are contract classes? [info]
+### How do you use the BaseColumns interface to describe your data schema? [info]
 
 
 ## Common Running Time
-
-	There are some common running times when analyzing an algorithm:
-	O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount. For example following functions have O(n) time complexity.
+There are some common running times when analyzing an algorithm:
+O(n): Time Complexity of a loop is considered as O(n) if the loop variables is incremented / decremented by a constant amount. For example following functions have O(n) time complexity.
 
 	// Here c is a positive integer constant   
 	for (int i = 1; i <= n; i += c) {  
@@ -1310,7 +1306,8 @@ Databases
 	for (int i = n; i > 0; i -= c) {
 	    // some O(1) expressions
 	}
-	O(n^c): Time complexity of nested loops is equal to the number of times the innermost statement is executed. For example the following sample loops have O(n^2) time complexity
+
+O(n^c): Time complexity of nested loops is equal to the number of times the innermost statement is executed. For example the following sample loops have O(n^2) time complexity
 
 	for (int i = 1; i <=n; i += c) {
 	   for (int j = 1; j <=n; j += c) {
@@ -1322,9 +1319,9 @@ Databases
 	   for (int j = i+1; j <=n; j += c) {
 	      // some O(1) expressions
 	}
-	For example Selection sort and Insertion Sort have O(n^2) time complexity.
-
-	O(Logn) Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
+	
+For example Selection sort and Insertion Sort have O(n^2) time complexity.
+O(Logn) Time Complexity of a loop is considered as O(Logn) if the loop variables is divided / multiplied by a constant amount.
 
 	for (int i = 1; i <=n; i *= c) {
 	   // some O(1) expressions
@@ -1334,7 +1331,7 @@ Databases
 	}
 	For example Binary Search has O(Logn) time complexity.
 
-	O(LogLogn) Time Complexity of a loop is considered as O(LogLogn) if the loop variables is reduced / increased exponentially by a constant amount.
+O(LogLogn) Time Complexity of a loop is considered as O(LogLogn) if the loop variables is reduced / increased exponentially by a constant amount.
 
 	// Here c is a constant greater than 1   
 	for (int i = 2; i <=n; i = pow(i, c)) { 
@@ -1344,7 +1341,8 @@ Databases
 	for (int i = n; i > 0; i = fun(i)) { 
 	   // some O(1) expressions
 	}
-	One example of time complexity analysis
+	
+One example of time complexity analysis
 
 	int fun(int n)
 	{    
@@ -1367,9 +1365,8 @@ Databases
 	…………………………………………………….
 	For i = n, the inner loop is executed approximately n/n times.
 
-	So the total time complexity of the above algorithm is (n + n/2 + n/3 + … + n/n), Which becomes n * (1/1 + 1/2 + 1/3 + … + 1/n)
-
-	The important thing about series (1/1 + 1/2 + 1/3 + … + 1/n) is equal to O(Logn). So the time complexity of the above code is O(nLogn).
+So the total time complexity of the above algorithm is (n + n/2 + n/3 + … + n/n), Which becomes n * (1/1 + 1/2 + 1/3 + … + 1/n)
+The important thing about series (1/1 + 1/2 + 1/3 + … + 1/n) is equal to O(Logn). So the time complexity of the above code is O(nLogn).
 
 
 http://discrete.gr/complexity/
