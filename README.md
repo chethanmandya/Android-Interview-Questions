@@ -1,9 +1,9 @@
 # Android-Interview-Questions
 
 
-## What are the main 3 Object Oriented Programing (OOP) concepts?
+### What are the main 3 Object Oriented Programing (OOP) concepts?
 
-### Inheritance 
+#### Inheritance 
 
 Java inheritance can be defined as the process where one class acquires property (Field and methods) of another. With the use of inheritance the information made manageable in hierarchical order. 
 Inheritance is nothing but mechanism which allow you to reuse code. 
