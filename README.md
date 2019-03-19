@@ -180,14 +180,14 @@ its ability to define a behavior that's specific to the subclass type, which mea
 
 ### What the the primitive types in Java ?
 There are 8 primitive types:
-byte
-short
-int
-long
-char
-float
-double
-Boolean
+-byte
+-short
+-int
+-long
+-char
+-float
+-double
+-Boolean
 
 ### What data structures do we have available to us, as programmers?
 
@@ -321,6 +321,35 @@ Integer addarrayobject[][] = new Integer[3][2];
 addarrayobject[0][0]= new Integer(8)  
 
 ### What is mutable and immutable string ?
+In java, string objects are immutable. Immutable simply means unmodifiable or unchangeable. Once string object is created its data or state can't be changed but a new string object is created.
+
+Let's try to understand the immutability concept by the example given below:
+
+	class Testimmutablestring{  
+	 public static void main(String args[]){  
+	   String s="Sachin";  
+	   s.concat(" Tendulkar");//concat() method appends the string at the end  
+	   System.out.println(s);//will print Sachin because strings are immutable objects  
+	 }  
+	}  
+
+	Output:Sachin
+
+ Here Sachin is not changed but a new object is created with sachintendulkar. but s reference variable still refers to "Sachin" not to "Sachin Tendulkar".
+
+But if we explicitely assign it to the reference variable, it will refer to "Sachin Tendulkar" object.
+For example:
+
+	class Testimmutablestring1{  
+	 public static void main(String args[]){  
+	   String s="Sachin";  
+	   s=s.concat(" Tendulkar");  
+	   System.out.println(s);  
+	 }  
+	} 
+
+	Output:Sachin Tendulkar
+	
 ### What is the difference between String and String Builder ? 
 ### What are the use cases and differences of a HashSet and a TreeSet? [info]
 
