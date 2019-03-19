@@ -362,11 +362,19 @@ String is immutable for several reasons, here is a summary:
 - Class loading: String is used as arguments for class loading. If mutable, it could result in wrong class being loaded (because mutable objects change their state).
 	
 ### What is the difference between String and String Builder ? 
-### What are the use cases and differences of a HashSet and a TreeSet? [info]
+
+- String vs StringBuffer vs StringBuilder
+- String is immutable whereas StringBuffer and StringBuider are mutable classes.
+- StringBuffer is thread safe and synchronized whereas StringBuilder is not, thats why StringBuilder is more faster than StringBuffer.
+- String concat + operator internally uses StringBuffer or StringBuilder class.
+- For String manipulations in non-multi threaded environment, we should use StringBuilder else use StringBuffer class.
+
+
+### What are the use cases and differences of a HashSet and a TreeSet? 
 
 ### Difference between HashSet and TreeSet 
 
-1. Ordering : HashSet stores the object in random order . There is no guarantee that the element we  inserted first in the HashSet  will be printed first in the output . For example   
+1. Ordering : HashSet stores the object in random order . There is no guarantee that the element we inserted first in the HashSet will be printed first in the output . For example   
 
 
 import java.util.HashSet;
@@ -414,7 +422,6 @@ OUTPUT : [Alive, Awesome, is]
 5. Internal implementation :  As we have already discussed How hashset internally works in java thus, in one line HashSet are internally backed by hashmap. While TreeSet is backed by a  Navigable  TreeMap. 
 
 Difference between HashSet and TreeSet in Java with Example
-
 
 6. Functionality :    TreeSet is rich in functionality as compare to HashSet. Functions like pollFirst(),pollLast(),first(),last(),ceiling(),lower() etc. makes TreeSet easier to use than HashSet. 
 
