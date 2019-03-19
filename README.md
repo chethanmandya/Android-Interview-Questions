@@ -88,13 +88,16 @@ Why do you need this ?
 
 ### Describe the differences between abstract classes and interfaces.
 
-1. - abstract class : 0 or N number of concrete method OR 0 or N number of abstract method
+1. 
+- abstract class : 0 or N number of concrete method OR 0 or N number of abstract method
 - Interface : 0 or N number of abstract method only 
 
-2. - Abstract : There is no default cases for the methods, every access specifier can be define 
+2. 
+- Abstract : There is no default cases for the methods, every access specifier can be define 
 - Interface : There is default cases for interface, it is always public abstract methods
 
-3. - Abstract : There is no default cases for the variables, every access specifier can be define.
+3. 
+- Abstract : There is no default cases for the variables, every access specifier can be define.
 - Interface : There is default cases for interface, it is always public static final variables
 
 4. Abstract : 
