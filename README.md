@@ -763,7 +763,9 @@ An activity represents a single screen with a user interface,in-short Activity p
 ### What are the four states of the Activity Lifecycle? 
 [active/running, paused, stopped, destroyed]
 
-### What are the seven callback methods of an Activity used to perform operations when the Activity transitions between states? [onCreate(), onStart(), onResume(), onPause(), onStop(), onRestart(), onDestroy()]
+### What are the seven callback methods of an Activity used to perform operations when the Activity transitions between states? 
+
+[onCreate(), onStart(), onResume(), onPause(), onStop(), onRestart(), onDestroy()]
 
 ### What is the difference between a fragment and an activity? Explain the relationship between the two. 
 
