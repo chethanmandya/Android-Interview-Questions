@@ -476,78 +476,76 @@ Threads can be created by using two mechanisms :
 1. Extending the Thread class
 2. Implementing the Runnable Interface
 
-
-
-	class MultithreadingDemo extends Thread 
-	{ 
-	    public void run() 
-	    { 
-		try
+		class MultithreadingDemo extends Thread 
 		{ 
-		    // Displaying the thread that is running 
-		    System.out.println ("Thread " + 
-			  Thread.currentThread().getId() + 
-			  " is running"); 
+			    public void run() 
+			    { 
+				try
+				{ 
+				    // Displaying the thread that is running 
+				    System.out.println ("Thread " + 
+					  Thread.currentThread().getId() + 
+					  " is running"); 
 
+				} 
+				catch (Exception e) 
+				{ 
+				    // Throwing an exception 
+				    System.out.println ("Exception is caught"); 
+				} 
+			} 
 		} 
-		catch (Exception e) 
+
+		// Main Class 
+		public class Multithread 
 		{ 
-		    // Throwing an exception 
-		    System.out.println ("Exception is caught"); 
+		    public static void main(String[] args) 
+		    { 
+			int n = 8; // Number of threads 
+			for (int i=0; i<8; i++) 
+			{ 
+			    MultithreadingDemo object = new MultithreadingDemo(); 
+			    object.start(); 
+			} 
+		    } 
 		} 
-	    } 
-	} 
 
-	// Main Class 
-	public class Multithread 
-	{ 
-	    public static void main(String[] args) 
-	    { 
-		int n = 8; // Number of threads 
-		for (int i=0; i<8; i++) 
+
+
+
+		class MultithreadingDemo implements Runnable 
 		{ 
-		    MultithreadingDemo object = new MultithreadingDemo(); 
-		    object.start(); 
+		    public void run() 
+		    { 
+			try
+			{ 
+			    // Displaying the thread that is running 
+			    System.out.println ("Thread " + 
+						Thread.currentThread().getId() + 
+						" is running"); 
+
+			} 
+			catch (Exception e) 
+			{ 
+			    // Throwing an exception 
+			    System.out.println ("Exception is caught"); 
+			} 
+		    } 
 		} 
-	    } 
-	} 
 
-
-
-
-	class MultithreadingDemo implements Runnable 
-	{ 
-	    public void run() 
-	    { 
-		try
+		// Main Class 
+		class Multithread 
 		{ 
-		    // Displaying the thread that is running 
-		    System.out.println ("Thread " + 
-					Thread.currentThread().getId() + 
-					" is running"); 
-
-		} 
-		catch (Exception e) 
-		{ 
-		    // Throwing an exception 
-		    System.out.println ("Exception is caught"); 
-		} 
-	    } 
-	} 
-
-	// Main Class 
-	class Multithread 
-	{ 
-	    public static void main(String[] args) 
-	    { 
-		int n = 8; // Number of threads 
-		for (int i=0; i<8; i++) 
-		{ 
-		    Thread object = new Thread(new MultithreadingDemo()); 
-		    object.start(); 
-		} 
-	    } 
-	}
+		    public static void main(String[] args) 
+		    { 
+			int n = 8; // Number of threads 
+			for (int i=0; i<8; i++) 
+			{ 
+			    Thread object = new Thread(new MultithreadingDemo()); 
+			    object.start(); 
+			} 
+		    } 
+		}
 
 
 
@@ -563,11 +561,11 @@ A thread pool reuses previously created threads to execute current tasks and off
 Executor Thread Pool Methods
 
 Method                         Description
-newFixedThreadPool(int)           Creates a fixed size thread pool.
-newCachedThreadPool()             Creates a thread pool that creates new 
+- newFixedThreadPool(int)           Creates a fixed size thread pool.
+- newCachedThreadPool()             Creates a thread pool that creates new 
                                   threads as needed, but will reuse previously 
                                   constructed threads when they are available
-newSingleThreadExecutor()         Creates a single thread. 
+- newSingleThreadExecutor()         Creates a single thread. 
 
 
 	// Java program to illustrate 
@@ -793,9 +791,6 @@ Views are the nuts and bolts of your UI , Activities and fragments are life cycl
 
 
 ### Activity life cycle
-
-
-public class Activity extends ApplicationContext {
 
 - protected void onCreate(Bundle savedInstanceState);
 	Called when the activity is first created. This is where you should do all of your normal static set up: create views, bind data to lists, etc. This method also provides you with a Bundle containing the activity's previously frozen state, if there was one.Always followed by onStart().
