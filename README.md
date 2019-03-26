@@ -165,7 +165,7 @@ Finally is a block.
 Finalize is used to perform clean up processing just before object is garbage collected.
 Finalize is a method.
 
-In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?[info]
+In Java, does the finally block gets executed if we insert a return statement inside the try block of a try-catch-finally?
 That's actually true in any language...finally will always execute before a return statement, no matter where that return is in the method body. If that wasn't the case, the finally block wouldn't have much meaning.
 
 ### Explain method overloading & overriding ?
@@ -180,14 +180,14 @@ its ability to define a behavior that's specific to the subclass type, which mea
 
 ### What the the primitive types in Java ?
 There are 8 primitive types:
--byte
--short
--int
--long
--char
--float
--double
--Boolean
+- byte
+- short
+- int
+- long
+- char
+- float
+- double
+- Boolean
 
 ### What data structures do we have available to us, as programmers?
 
@@ -740,15 +740,11 @@ How to stop the looper ??
 looperThread.handler.getLooper().quit();
 customerHandlerThread.getLooper().quit();
 
-### Explain event-driven programming in Java [info]
-### How can you typecast in Java? [info]
-### Explain Java's try-catch-finally paradigm [info]
-
+### Explain event-driven programming in Java 
+### How can you typecast in Java? 
+### Explain Java's try-catch-finally paradigm
 ### Build Tools
-
 ### Have you used any Ant, Maven, Gradle features for your project?
-
-
 ### Core Android
 ### How does the Android notification system work?
 ### How can two distinct Android apps interact? (several answers)
@@ -799,33 +795,32 @@ Views are the nuts and bolts of your UI , Activities and fragments are life cycl
 
 public class Activity extends ApplicationContext {
 
-protected void onCreate(Bundle savedInstanceState);
+- protected void onCreate(Bundle savedInstanceState);
 	Called when the activity is first created. This is where you should do all of your normal static set up: create views, bind data to lists, etc. This method also provides you with a Bundle containing the activity's previously frozen state, if there was one.Always followed by onStart().
 
 
-protected void onRestart(); 
+- protected void onRestart(); 
 	Called after your activity has been stopped, prior to it being started again. Always followed by onStart()
 
-protected void onStart();
+ - protected void onStart();
 	Called when the activity is becoming visible to the user.
 Followed by onResume() if the activity comes to the foreground, or onStop() if it becomes hidden
 
-protected void onResume();
+- protected void onResume();
 	Called when the activity will start interacting with the user. At this point your activity is at the top of the activity stack, with user input going to it.
 Always followed by onPause().
 
-protected void onPause();
+- protected void onPause();
 	Called when the system is about to start resuming a previous activity. This is typically used to commit unsaved changes to persistent data, stop animations and other things that may be consuming CPU, etc. Implementations of this method must be very quick because the next activity will not be resumed until this method returns.
 	Followed by either onResume() if the activity returns back to the front, or onStop() if it becomes invisible to the user.
 
-protected void onStop();
+- protected void onStop();
 	Called when the activity is no longer visible to the user, because another activity has been resumed and is covering this one. This may happen either because a new activity is being started, an existing one is being brought in front of this one, or this one is being destroyed.
 	Followed by either onRestart() if this activity is coming back to interact with the user, or onDestroy() if this activity is going away.
 
- protected void onDestroy();
-		The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishin() method.
+ - protected void onDestroy();
+	The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishin() method.
  }
-. 
 
 ### What is the difference between Serializable and Parcelable? Which is the best approach in Android? 
 
@@ -858,7 +853,7 @@ According to google engineers, this code will run significantly faster. One of t
 
 However, it is obvious here that implementing Parcelable is not free. There is a significant amount of boilerplate code and it makes the classes harder to read and maintain.
 
-### What are "launch modes"? [info]
+### What are "launch modes"?
 There are four launch modes for activity. They are:
 
 1. standard
@@ -872,100 +867,98 @@ In the AndroidManifest you can use “launchMode” attribute inside the <activi
 Now let’s look at the differences between launch modes.
 
 1. standard
-This is the default launch mode of an activity (If not specified). It creates a new instance of an activity in the task from which it was started. Multiple instances of the activity can be created and multiple instances can be added to the same or different tasks. In other words you can create the same activity multiple times in the same task as well as in different tasks.
+	This is the default launch mode of an activity (If not specified). It creates a new instance of an activity in the task from 	which it was started. Multiple instances of the activity can be created and multiple instances can be added to the same or different 	tasks. In other words you can create the same activity multiple times in the same task as well as in different tasks.
 
-<activity android:launchMode=”standard” />
-Example:
-Suppose you have A, B, C and D activities and your activity B has “launch mode = standard”. Now you again launching activity B –
+	<activity android:launchMode=”standard” />
+	Example:
+	Suppose you have A, B, C and D activities and your activity B has “launch mode = standard”. Now you again launching activity B 
 
-State of Activity Stack before launch B
-A -> B -> C -> D
+	State of Activity Stack before launch B
+	A -> B -> C -> D
 
-State of Activity Stack after launch B
-A -> B -> C -> D -> B
+	State of Activity Stack after launch B
+	A -> B -> C -> D -> B
 
 2. singleTop
-In this launch mode if an instance of activity already exists at the top of the current task, a new instance will not be created and Android system will route the intent information through onNewIntent(). If an instance is not present on top of task then new instance will be created.
+	In this launch mode if an instance of activity already exists at the top of the current task, a new instance will not be created and Android system will route the intent information through onNewIntent(). If an instance is not present on top of task then new instance will be created.
 
-Using this launch mode you can create multiple instance of the same activity in the same task or in different tasks only if the same instance does not already exist at the top of stack.
+	Using this launch mode you can create multiple instance of the same activity in the same task or in different tasks only if the same instance does not already exist at the top of stack.
 
-<activity android:launchMode=”singleTop” />
-Example:
-Case 1:
-Suppose you have A, B and C activities and your activity D has “launch mode = singleTop”. Now you launching activity D -
+	<activity android:launchMode=”singleTop” />
+	Example:
+	Case 1:
+	Suppose you have A, B and C activities and your activity D has “launch mode = singleTop”. Now you launching activity D -
 
-State of Activity Stack before launch D
-A -> B -> C
+	State of Activity Stack before launch D
+	A -> B -> C
 
-State of Activity Stack after launch D activity
-A -> B -> C -> D (Here D launch as usual)
+	State of Activity Stack after launch D activity
+	A -> B -> C -> D (Here D launch as usual)
 
-Case 2:
-Suppose you have A, B, C and D activities and your activity D has “launch mode = singleTop”. Now you again launching activity D -
+	Case 2:
+	Suppose you have A, B, C and D activities and your activity D has “launch mode = singleTop”. Now you again launching activity D -
 
-State of Activity Stack before launch D
-A -> B -> C -> D
+	State of Activity Stack before launch D
+	A -> B -> C -> D
 
-State of Activity Stack after launch D activity
-A -> B -> C -> D (Here old instance gets called and intent data route through onNewIntent() callback)
+	State of Activity Stack after launch D activity
+	A -> B -> C -> D (Here old instance gets called and intent data route through onNewIntent() callback)
 
 3. singleTask
-In this launch mode a new task will always be created and a new instance will be pushed to the task as the root one. If an instance of activity exists on the separate task, a new instance will not be created and Android system routes the intent information through onNewIntent() method. At a time only one instance of activity will exist.
+	In this launch mode a new task will always be created and a new instance will be pushed to the task as the root one. If an instance of activity exists on the separate task, a new instance will not be created and Android system routes the intent information through onNewIntent() method. At a time only one instance of activity will exist.
 
-<activity android:launchMode=”singleTask” />
-Example:
-Case 1:
-Suppose you have A, B and C activities and your activity D has “launch mode = singleTask”. Now you launching activity D -
+	<activity android:launchMode=”singleTask” />
+	Example:
+	Case 1:
+	Suppose you have A, B and C activities and your activity D has “launch mode = singleTask”. Now you launching activity D -
 
-State of Activity Stack before launch D
-A -> B -> C
+	State of Activity Stack before launch D
+	A -> B -> C
 
-State of Activity Stack after launch D activity
-A -> B -> C -> D (Here D launch as usual)
+	State of Activity Stack after launch D activity
+	A -> B -> C -> D (Here D launch as usual)
 
+	Case 2:
+	Suppose you have A, B, C and D activities and your activity B has “launch mode = singleTask”. Now you again launching activity B-
 
+	State of Activity Stack before launch D
+	A -> B -> C -> D
 
-Case 2:
-Suppose you have A, B, C and D activities and your activity B has “launch mode = singleTask”. Now you again launching activity B-
+	State of Activity Stack after launch B activity
+	A -> B (Here old instance gets called and intent data route through onNewIntent() callback)
 
-State of Activity Stack before launch D
-A -> B -> C -> D
-
-State of Activity Stack after launch B activity
-A -> B (Here old instance gets called and intent data route through onNewIntent() callback)
-
-Also notice that C and D activities get destroyed here.
+	Also notice that C and D activities get destroyed here.
 
 4. singleInstance
-This is very special launch mode and only used in the applications that has only one activity. It is similar to singleTask except that no other activities will be created in the same task. Any other activity started from here will create in a new task.
+	This is very special launch mode and only used in the applications that has only one activity. It is similar to singleTask except that no other activities will be created in the same task. Any other activity started from here will create in a new task.
 
-<activity android:launchMode=”singleInstance” />
-Example:
-Case 1:
-Suppose you have A, B and C activities and your activity D has “launch mode = singleInstance”. Now you launching activity D -
+	<activity android:launchMode=”singleInstance” />
+	Example:
+	Case 1:
+	Suppose you have A, B and C activities and your activity D has “launch mode = singleInstance”. Now you launching activity D -
 
-State of Activity Stack before launch D
-A -> B -> C
+	State of Activity Stack before launch D
+	A -> B -> C
 
-State of Activity Stack after launch D activity
-Task1 — A -> B -> C
-Task2 — D (here D will be in different task)
+	State of Activity Stack after launch D activity
+	Task1 — A -> B -> C
+	Task2 — D (here D will be in different task)
 
-Now if you continue this and start E and D then Stack will look like-
+	Now if you continue this and start E and D then Stack will look like-
 
-Task1 — A -> B -> C -> E
-Task2 — D
+	Task1 — A -> B -> C -> E
+	Task2 — D
 
-Case 2:
-Suppose you have A, B, C activities in one task and activity D is in another task with “launch mode = singleInstance”. Now you again launching activity D-
+	Case 2:
+	Suppose you have A, B, C activities in one task and activity D is in another task with “launch mode = singleInstance”. Now you again launching activity D-
 
-State of Activity Stack before launch D
-Task1 — A -> B -> C
+	State of Activity Stack before launch D
+	Task1 — A -> B -> C
 
-Task2 — D
-State of Activity Stack after launch B activity
-Task1 — A -> B -> C
-Task2 — D (Here old instance gets called and intent data route through onNewIntent() callback)
+	Task2 — D
+	State of Activity Stack after launch B activity
+	Task1 — A -> B -> C
+	Task2 — D (Here old instance gets called and intent data route through onNewIntent() callback)
 
 
 ### What are Intents?
@@ -1017,6 +1010,7 @@ You can still consider AsyncTask and HandlerThread for doing the same as service
 
 
 ### Types of services:
+
 Foreground :
 A foreground service performs some operation that is noticeable to the user. typical example is , an audio app would use a foreground service to play an audio track. Foreground services must display a Notification. Foreground services continue running even when the user isn't interacting with the app.
 
@@ -1033,13 +1027,13 @@ A service is bound when an application component binds to it by calling bindServ
 
 Class which extend services becomes service class. on extending service, there are certain methods to be override in the class
 
-OnCreate() - The system invokes this method to perform one-time setup procedures when the service is initially created
+- OnCreate() - The system invokes this method to perform one-time setup procedures when the service is initially created
 
-OnBind() - The system invokes this method by calling bindService() when another component wants to bind with the service (such as to perform RPC). 
+- OnBind() - The system invokes this method by calling bindService() when another component wants to bind with the service (such as to perform RPC). 
 
-OnDestroy() - to clean up any resources such as threads, registered listeners, or receivers. This is the last call that the service receives.
+- OnDestroy() - to clean up any resources such as threads, registered listeners, or receivers. This is the last call that the service receives.
 
-OnStartCommand () - The system invokes this method by calling startService(), to stop service we say that stopSelf() or stopServices().
+- OnStartCommand () - The system invokes this method by calling startService(), to stop service we say that stopSelf() or stopServices().
 
 
 ### Android system force-stops a service : 
@@ -1166,7 +1160,6 @@ Use LocalbroadcastManager.
 
 
 ### Android O limitation on services : 
-
 ### what happens when you do start services when your not there in forground services? 
 
 you will get illagal state exception. basically is not the way to start background services anymore. this kind of big deal in android oreo . there are some very practical ways in which this is softened up. one of that is grace period . services continue to run on for a while once you lose your foreground status  
@@ -1329,10 +1322,10 @@ View class represents the basic building block for user interface components. A 
 ### Explain the differences and similarities of Relative Layout and Linear Layout.
 ### Explain the differences and similarities of List Views and Grid Views.
 ### Describe how to implement XML namespaces.
-### Explain how to present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML (no Java) [info]
+### Explain how to present different styles/drawables for a button depending on the state of the button (pressed, selected, etc.) using XML (no Java)
 for layout_width and layout_height, what's the difference between match_parent and wrap_content?
-### How do you implement Google's new Material Design in an Android application? [info]
-### Difference between View.GONE and View.INVISIBLE? [info]
+### How do you implement Google's new Material Design in an Android application?
+### Difference between View.GONE and View.INVISIBLE?
 
 Android Networking
 ### Have you use an HTTP Library, which, why, did you like it?
@@ -1341,8 +1334,8 @@ Android Networking
 Databases
 ### Why does Android use SQLite?
 ### What libraries have you used for interacting with databases and why did you choose them?
-### What are contract classes? [info]
-### How do you use the BaseColumns interface to describe your data schema? [info]
+### What are contract classes?
+### How do you use the BaseColumns interface to describe your data schema?
 
 
 ## Common Running Time
