@@ -743,8 +743,21 @@ customerHandlerThread.getLooper().quit();
 ### Explain Java's try-catch-finally paradigm
 ### Build Tools
 ### Have you used any Ant, Maven, Gradle features for your project?
+
 ### Core Android
+
 ### How does the Android notification system work?
+
+From what I've heard during an Android developers conference in Israel:
+
+There is simply a TCP socket waiting in accept mode on a cloud Google server. The TCP connection had been initiated by the Google Play application. That's why Google Play must be installed on the device for making Google Cloud Messaging (GCM) (formerly Android Cloud to Device Messaging Service - C2DM) work.
+
+When this TCP client socket receives some message, the message contains information such as the package name of the application it should be addressed to, and of course - the data itself. This data is parsed and packed into an intent that is broadcast and eventually received by the application.
+
+The TCP socket stays open even when the device's radio state turns into "idle" mode. Applications don't have to be running to receive the intents.
+
+More information at http://developer.android.com/google/gcm/gcm.html
+
 ### How can two distinct Android apps interact? (several answers)
 
 At the simplest level there are two different ways for apps to interact on Android: via Intents, passing data from one application to another; and through Services, where one application provides functionality for others to use. There are different ways to utilize both methods, depending on what you want to accomplish and what technical challenges you face. This is a brief overview that wil l avoid delving into the technical aspects.
