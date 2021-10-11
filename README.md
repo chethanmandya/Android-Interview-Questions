@@ -1185,8 +1185,8 @@ Imagine a scenario where many applications want to perform work when a device is
 
 ### Android and the JobScheduler
 
-Android 8.0 has introduced new background execution limits that dramatically change how services work. When applications move into the background, any services they start will be granted several minutes to complete their work before the operating system terminates them. The Android Framework JobScheduler is one possible way to address this change for Xamarin.Android apps targeting Android 5.0 (API level 21) or higher.
-
+Android 8.0 has introduced new background execution limits that dramatically change how services work. When applications move into the background, any services they start will be granted several minutes to complete their work before the operating system terminates them. 
+	
 The Android Framework JobScheduler is an API designed to run jobs—discrete, distinct units of work—in the background of various apps. The JobScheduler schedules which jobs will run at appropriate times according to conditions that can be set by the application. Going back to our original example above, the JobScheduler may schedule the jobs so that they run one after another, instead of all at once.
 
 Scheduling : 
@@ -1254,7 +1254,7 @@ JobFinished
 Finally, when a JobService has finished its work (regardless of which thread the work is running on), it should call its own JobFinished() method. It’s important to call this method because it tells the JobScheduler that the work is done and it’s safe to release any wake locks that were acquired for the JobService in the first place. This diagram illustrates how the JobService methods relate to each other and how they would be used:
 
 Wrapping Up
-Now that you’ve seen the basics of the JobScheduler API, try using it in your Xamarin.Android application to replace a task done in a background service. This is a great opportunity to enhance the experience your user has with your applications andupdate to Android Oreo 8.0 all at once! You can find a simple sample on GitHub that shows the JobScheduler API in action. The sample calculates a Fibonacci number in a job and then passes that number back to an Activity.
+Now that you’ve seen the basics of the JobScheduler API.Android application to replace a task done in a background service. This is a great opportunity to enhance the experience your user has with your applications andupdate to Android Oreo 8.0 all at once! You can find a simple sample on GitHub that shows the JobScheduler API in action. The sample calculates a Fibonacci number in a job and then passes that number back to an Activity.
 
 
 
