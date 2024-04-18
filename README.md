@@ -1072,10 +1072,58 @@ Now the question is what would happen to the service that had been killed ?
 
 -If the system kills your service, it restarts it as soon as resources become available, but this also depends on the value that you return from onStartCommand().
 
-Start_sticky - Auto restart , null intent
-start_not_sticky - no auto restart, with intent started 
-start_redeliver_intent -  yes - intent 
+-Start_sticky - Auto restart , null intent
 
+-start_not_sticky - no auto restart, with intent started 
+
+-start_redeliver_intent -  yes - intent 
+
+
+here are examples illustrating the use of each start flag:
+
+1. **START_STICKY**:
+   ```java
+   public class MusicPlaybackService extends Service {
+       @Override
+       public int onStartCommand(Intent intent, int flags, int startId) {
+           // Start playing music
+           startMusicPlayback();
+
+           // Return START_STICKY to indicate that the service should be restarted
+           return START_STICKY;
+       }
+   }
+   ```
+
+2. **START_NOT_STICKY**:
+   ```java
+   public class DataProcessingService extends Service {
+       @Override
+       public int onStartCommand(Intent intent, int flags, int startId) {
+           // Process a batch of data
+           processDataBatch();
+
+           // Return START_NOT_STICKY since the service doesn't need to be restarted automatically
+           return START_NOT_STICKY;
+       }
+   }
+   ```
+
+3. **START_REDELIVER_INTENT**:
+   ```java
+   public class FileDownloadService extends Service {
+       @Override
+       public int onStartCommand(Intent intent, int flags, int startId) {
+           // Download a file using the intent
+           downloadFile(intent);
+
+           // Return START_REDELIVER_INTENT to ensure that the original intent is redelivered if the service is restarted
+           return START_REDELIVER_INTENT;
+       }
+   }
+   ```
+
+These examples demonstrate how each start flag can be used to define the behavior of a service based on its specific requirements.
 You can ensure that your service is available to only your app by including the android:exported attribute and setting it to false . 
 
 Users can see what services are running on their device. If they see a service that they don't recognize or trust, they can stop the service. In order to avoid having your service stopped accidentally by users, you need to add the android:description attribute to the <service> element in your app manifest. In the description, provide a short sentence explaining what the service does and what benefits it provides.
