@@ -776,7 +776,23 @@ An activity represents a single screen with a user interface,in-short Activity p
 
 ### What are the seven callback methods of an Activity used to perform operations when the Activity transitions between states? 
 
-[onCreate(), onStart(), onResume(), onPause(), onStop(), onRestart(), onDestroy()]
+The activity lifecycle in Android describes the stages an activity goes through during its entire lifetime, from creation to destruction. Here are the main stages:
+
+1. **Created**: The activity is first created, but it's not yet visible to the user.
+
+2. **Started**: The activity becomes visible to the user, but it may not be in the foreground and can be partially obscured by other activities.
+
+3. **Resumed**: The activity is now in the foreground and has user focus. It's actively interacting with the user.
+
+4. **Paused**: The activity loses focus but is still visible to the user. This happens when another activity comes into the foreground, partially covering the paused activity.
+
+5. **Stopped**: The activity is no longer visible to the user. It's still in memory but can be killed by the system if resources are needed elsewhere.
+
+6. **Destroyed**: The activity is being destroyed either by the system or by calling `finish()` method. This is the final stage of an activity's lifecycle.
+
+During these stages, an activity can respond to lifecycle events by overriding various lifecycle methods provided by the Android framework, such as `onCreate()`, `onStart()`, `onResume()`, `onPause()`, `onStop()`, and `onDestroy()`. These methods allow developers to perform specific actions at different points in the activity's lifecycle, such as initializing UI components, saving and restoring instance state, or releasing resources.
+
+Understanding the activity lifecycle is crucial for properly managing an activity's state, handling configuration changes, and ensuring a smooth user experience in Android applications.
 
 ### What is the difference between a fragment and an activity? Explain the relationship between the two. 
 
